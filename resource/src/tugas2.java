@@ -2,21 +2,27 @@ import java.util.Scanner;
 class formatBiodata {
     String nama;
     int noMhs;
-    String nim;
     float nilaiUts;
     float nilaiUas;
 }
 
 public class tugas2 {
 
-    private static Scanner in = new Scanner(System.in);
+    
     private static int jmlMhs = 0;
 
     public static void inputData(formatBiodata biodataMahasiswa[]){
 
+        Scanner in = new Scanner(System.in);
+
         System.out.println("Masukan jumlah mahasiswa : ");
-        jmlMhs
-        for(int i = 0;  )
+        jmlMhs = in.nextInt();
+        for(int i = 0; i < jmlMhs;i++ ){
+            System.out.print("Silahkan masukan nama Mahasiswa : ");
+            biodataMahasiswa[i].nama = in.next();
+            System.out.print("Silahkan masukan nomor mahasiswa : ");
+
+        }
     }
 
 public static void main(String[]args){
