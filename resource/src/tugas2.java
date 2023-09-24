@@ -14,8 +14,9 @@ public class tugas2 {
 
     public static void inputData(formatBiodata biodataMahasiswa[]){
 
-        System.out.println("Masukan jumlah mahasiswa : ");
+        System.out.print("Masukan jumlah mahasiswa (Maks 10) : ");
         jmlMhs = in.nextInt();
+
         for(int i = 0; i < jmlMhs;i++ ){
             System.out.print("Silahkan masukan nama Mahasiswa : ");
             biodataMahasiswa[i].nama = in.next();
@@ -23,10 +24,28 @@ public class tugas2 {
             biodataMahasiswa[i].noMhs = in.nextInt();
             System.out.print("Masukan nilai UTS :");
             biodataMahasiswa[i].nilaiUts = in.nextFloat();
-            System.out.println("Masukan nilai UAS : ");
+            System.out.print("Masukan nilai UAS : ");
             biodataMahasiswa[i].nilaiUas = in.nextFloat();
+            System.out.println(" ");
 
         }
+    }
+
+    public static void tampilkanData(formatBiodata biodataMahasiswa[]){
+
+        System.out.println("-------------------------------------");
+        System.out.println("Nama No Mahasiswa Nilia UTS Nilai UAS");
+        System.out.println("-------------------------------------");
+        
+        for(int i = 0; i < jmlMhs; i++){
+            System.out.print(biodataMahasiswa[i].nama+ " " );
+            System.out.print(biodataMahasiswa[i].noMhs+ " " );
+            System.out.print(biodataMahasiswa[i].nilaiUts+ " " );
+            System.out.println(biodataMahasiswa[i].nilaiUas+ " " );
+            System.out.println(" ");
+            
+        }
+        System.out.println("-------------------------------------");
     }
 
 public static void main(String[]args){
@@ -54,11 +73,17 @@ public static void main(String[]args){
             case 1 :
             inputData(biodataMahasiswa);
             break;
+            case 2 :
+            tampilkanData(biodataMahasiswa);
+            break;
             case 3 :
+            System.out.println("Terimakasih sudah menggunakan layanan kami!");
             return;
+            default :
+            System.out.println("Anda memasukan pilihan yang salah!");
         }
         
-    }while(pilihan < 3);
+    }while(pilihan != 3);
 
 }
 
