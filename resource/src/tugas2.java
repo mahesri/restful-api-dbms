@@ -31,7 +31,17 @@ public class tugas2 {
 
 public static void main(String[]args){
     int pilihan = 1;
-
+    formatBiodata biodataMahasiswa[] = new formatBiodata[10];
+    biodataMahasiswa[0] = new formatBiodata();
+    biodataMahasiswa[1] = new formatBiodata();
+    biodataMahasiswa[2] = new formatBiodata();
+    biodataMahasiswa[3] = new formatBiodata();
+    biodataMahasiswa[4] = new formatBiodata();
+    biodataMahasiswa[5] = new formatBiodata();
+    biodataMahasiswa[6] = new formatBiodata();
+    biodataMahasiswa[7] = new formatBiodata();
+    biodataMahasiswa[8] = new formatBiodata();
+    biodataMahasiswa[9] = new formatBiodata();
 
     do {
         System.out.println("|--------------MENU---------------|");
@@ -44,9 +54,11 @@ public static void main(String[]args){
             case 1 :
             inputData(biodataMahasiswa);
             break;
+            case 3 :
+            return;
         }
         
-    }while(pilihan< 3);
+    }while(pilihan < 3);
 
 }
 
