@@ -9,11 +9,10 @@ class formatBiodata {
 public class tugas2 {
 
     
+    private static  Scanner in = new Scanner(System.in);;
     private static int jmlMhs = 0;
 
     public static void inputData(formatBiodata biodataMahasiswa[]){
-
-        Scanner in = new Scanner(System.in);
 
         System.out.println("Masukan jumlah mahasiswa : ");
         jmlMhs = in.nextInt();
@@ -43,7 +42,8 @@ public static void main(String[]args){
 
         switch(pilihan){
             case 1 :
-
+            inputData(biodataMahasiswa);
+            break;
         }
         
     }while(pilihan< 3);
