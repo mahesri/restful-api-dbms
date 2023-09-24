@@ -21,6 +21,11 @@ public class tugas2 {
             System.out.print("Silahkan masukan nama Mahasiswa : ");
             biodataMahasiswa[i].nama = in.next();
             System.out.print("Silahkan masukan nomor mahasiswa : ");
+            biodataMahasiswa[i].noMhs = in.nextInt();
+            System.out.print("Masukan nilai UTS :");
+            biodataMahasiswa[i].nilaiUts = in.nextFloat();
+            System.out.println("Masukan nilai UAS : ");
+            biodataMahasiswa[i].nilaiUas = in.nextFloat();
 
         }
     }
