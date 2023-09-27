@@ -1,28 +1,9 @@
+public static void tambahDataDiTengah(formatBiodata bidataMahasiswa[]){
 
-import java.util.*;
-class formatBiodata {
+    formatBiodata biodataMahasiswaBaru = formatBiodata();
+    Scanner in = new Scanner(System.in);
 
-		String nama;
-		String alamat;
-		int umur;
-		char jekel;
-		String hobi[] = new String[3];
-		float ipk;
-
-	}
-
-	public class praktik3_1 {
-
-
-
-
-public static void tambahDataDepan(formatBiodata biodataMahasiswa[]){
-
-	formatBiodata biodataMahasiswaBaru[] = new formatBiodata();
-	Scanner in = new Scanner(System.in);
-	int bacaTombol = 0;
-
-	System.out.print("Silahkan masukan nama Anda : ");
+    System.out.print("Silahkan masukan nama Anda : ");
 	biodataMahasiswaBaru.nama = in.next();
 	System.out.print("Silahkan masukan alamat Anda : ");
 	biodataMahasiswaBaru.alamat = in.next();
@@ -40,14 +21,15 @@ public static void tambahDataDepan(formatBiodata biodataMahasiswa[]){
 	biodataMahasiswaBaru.hobi[2] = in.next();
 	System.out.print("Silahkan masukan IPK Anda : ");
 	biodataMahasiswaBaru.ipk = in.nextFloat();
+
+    int T;
+    System.out.print("Pada posisi berapa data dimasukan : ");
+    T in.nextInt();
+
+    for(int i = N - 1; i >=T; i-- ){
+        biodataMahasiswa[i + 1] = biodataMahasiswaBaru[i];
+    }
+
+    biodataMahasiswa[T] = biodataMahasiswa;
+    N++;
 }
-
-for(int i = N-1; i >=0;i--){
-biodataMahasiswa[i+1] = biodataMahasiswa[i];
-}
-
-biodataMahasiswa[0] = biodataMahasiswaBaru;
-N++
-
-
-	}
