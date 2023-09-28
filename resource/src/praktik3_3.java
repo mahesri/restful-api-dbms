@@ -19,4 +19,8 @@ public static void tambahDataDiBelakang(formatbiodata biodataMahasiswa[]){
 	biodataMahasiswaBaru.hobi[2] = in.next();
 	System.out.print("Silahkan masukan IPK Anda : ");
 	biodataMahasiswaBaru.ipk = in.nextFloat();
+
+    biodataMahasiswa[N] = biodataMahasiswaBaru;
+
+    N++;
 }
