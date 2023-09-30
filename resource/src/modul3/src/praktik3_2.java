@@ -1,7 +1,9 @@
-public static void tambahDataDiBelakang(formatbiodata biodataMahasiswa[]){
-   formatBiodata biodataMahasiswaBaru = formatBiodata();
+public static void tambahDataDiTengah(formatBiodata bidataMahasiswa[]){
 
-    sSystem.out.print("Silahkan masukan nama Anda : ");
+    formatBiodata biodataMahasiswaBaru = formatBiodata();
+    Scanner in = new Scanner(System.in);
+
+    System.out.print("Silahkan masukan nama Anda : ");
 	biodataMahasiswaBaru.nama = in.next();
 	System.out.print("Silahkan masukan alamat Anda : ");
 	biodataMahasiswaBaru.alamat = in.next();
@@ -20,7 +22,14 @@ public static void tambahDataDiBelakang(formatbiodata biodataMahasiswa[]){
 	System.out.print("Silahkan masukan IPK Anda : ");
 	biodataMahasiswaBaru.ipk = in.nextFloat();
 
-    biodataMahasiswa[N] = biodataMahasiswaBaru;
+    int T;
+    System.out.print("Pada posisi berapa data dimasukan : ");
+    T in.nextInt();
 
+    for(int i = N - 1; i >=T; i-- ){
+        biodataMahasiswa[i + 1] = biodataMahasiswaBaru[i];
+    }
+
+    biodataMahasiswa[T] = biodataMahasiswa;
     N++;
 }
