@@ -41,11 +41,11 @@ public class masterProgram {
         }
     }
 
-    public static void tambahDataDiDepan(formatBiodata biodataMahasiswa[]) {
+    public static void tambahDataDiTengah(formatBiodata biodataMahasiswa[]) {
 
         formatBiodata biodataMahasiswaBaru = new formatBiodata();
         int bacaTombol = 0;
-
+        int T;
         System.out.print("Silahkan masukan nama Anda : ");
         biodataMahasiswaBaru.nama = in.next();
         System.out.print("Silahkan Masukan alamat Anda : ");
@@ -67,11 +67,14 @@ public class masterProgram {
         System.out.print("Silahkan masukan IPK Anda : ");
         biodataMahasiswaBaru.ipk = in.nextFloat();
 
-        for (int i = N - 1; i >=0; i--) {
+        System.out.println("Pada data keberapa Anda ingin menambahkan Nilai : ");
+        T = in.nextInt();
+
+        for (int i = N - 1; i >=T; i--) {
 
             biodataMahasiswa[i + 1] = biodataMahasiswa[i];
         }
-        biodataMahasiswa[0] = biodataMahasiswaBaru;
+        biodataMahasiswa[T] = biodataMahasiswaBaru;
         N++;
 
     }
@@ -109,7 +112,7 @@ public class masterProgram {
 
         ngentriData(biodataMahasiswa);
         tampilkanData(biodataMahasiswa);
-        tambahDataDiDepan(biodataMahasiswa);
+        tambahDataDiTengah(biodataMahasiswa);
         tampilkanData(biodataMahasiswa);
     }
 }
