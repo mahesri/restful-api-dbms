@@ -3,13 +3,13 @@ class formatBiodata {
 	String alamat;
 	int umur;
 	char jekel;
-	String hobi[] new String[3];
+	String hobi[]= new String[3];
 	float ipk;
 }
 
 public class latihan {
 
-public static void inisalisasiData(formatBiodata biodataMahasiswa[]);
+public static void inisalisasiData(formatBiodata biodataMahasiswa[]){
 
 biodataMahasiswa[0] = new formatBiodata();
 	biodataMahasiswa[0].nama = "Mahesri";
@@ -62,15 +62,6 @@ biodataMahasiswa[0] = new formatBiodata();
 	biodataMahasiswa[4].hobi[2] = "masak";
 	biodataMahasiswa[4].ipk = (float) 3.84;
 
-	biodataMahasiswa[5] = new formatBiodata();
-	biodataMahasiswa[5].nama = "Wulan";
-	biodataMahasiswa[5].alamat = "Jombang";
-	biodataMahasiswa[5].umur = 21;
-	biodataMahasiswa[5].jekel = 'P';
-	biodataMahasiswa[5].hobi[0] = "Nyanyi";
-	biodataMahasiswa[5].hobi[1] = "Nulis";
-	biodataMahasiswa[5].hobi[2] = "masak";
-	biodataMahasiswa[5].ipk = (float) 3.84;
 
 	biodataMahasiswa[5] = new formatBiodata();
 	biodataMahasiswa[5].nama = "Intan";
@@ -121,5 +112,38 @@ biodataMahasiswa[0] = new formatBiodata();
 	biodataMahasiswa[9].hobi[1] = "Rebahan";
 	biodataMahasiswa[9].hobi[2] = "masak-kalau-mood";
 	biodataMahasiswa[9].ipk = (float)3.6;
+
+		}
+
+		public static void tukarData(formatBiodata biodataMahasiswa[]){
+
+
+
+			}
+
+	public static void tampilkanData(formatBiodata biodataMahasiswa[]) {
+
+	        System.out.println("--------------------------------------------");
+	        System.out.println("NAMA ALAMAT UMUR JEKEL HOBI[1] HOBI[2] HOBI[3] IPK");
+	        System.out.println("--------------------------------------------");
+	        for (int i = 0; i < 10; i++) {
+	            System.out.print(biodataMahasiswa[i].nama + "\t");
+	            System.out.print(biodataMahasiswa[i].alamat + "\t");
+	            System.out.print(biodataMahasiswa[i].umur + "\t");
+	            System.out.print(biodataMahasiswa[i].jekel + "\t");
+	            for (int j = 0; j < 3; j++) {
+	                System.out.print(biodataMahasiswa[i].hobi[j] + "\t");
+	            }
+	            System.out.println(biodataMahasiswa[i].ipk + "\t");
+	        }
+	        System.out.println("--------------------------------------------");
+    }
+
+    public static void main (String[]args){
+
+		formatBiodata biodataMahasiswa[] = new formatBiodata[10];
+		inisalisasiData(biodataMahasiswa);
+		tampilkanData(biodataMahasiswa);
+		}
 
 	}
