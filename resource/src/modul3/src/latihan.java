@@ -9,6 +9,8 @@ class formatBiodata {
 
 public class latihan {
 
+	private static int N = 10;
+
 public static void inisalisasiData(formatBiodata biodataMahasiswa[]){
 
 biodataMahasiswa[0] = new formatBiodata();
@@ -117,7 +119,12 @@ biodataMahasiswa[0] = new formatBiodata();
 
 		public static void tukarData(formatBiodata biodataMahasiswa[]){
 
-
+		for(int i = 10 - 1;i >=4;i--){
+			biodataMahasiswa[i] = biodataMahasiswa[i+1];
+			}
+2
+			System.out.println("Ini bagian dari latihan!");
+			N--;
 
 			}
 
@@ -141,8 +148,10 @@ biodataMahasiswa[0] = new formatBiodata();
 
     public static void main (String[]args){
 
-		formatBiodata biodataMahasiswa[] = new formatBiodata[10];
+		formatBiodata biodataMahasiswa[] = new formatBiodata[N+1];
 		inisalisasiData(biodataMahasiswa);
+		tampilkanData(biodataMahasiswa);
+		tukarData(biodataMahasiswa);
 		tampilkanData(biodataMahasiswa);
 		}
 
