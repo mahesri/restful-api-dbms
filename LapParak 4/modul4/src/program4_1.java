@@ -1,7 +1,7 @@
 public static void mencariDataLinear(formatBiodata biodataMahasiswa[]){
 
 	String kataKunci;
-	int lokasi = -1;
+	int lokasi = -1; // penanda bahwa tidak ada indeks dalam array yang cocok dengan elemen yang dicari.
 	boolean statusKetemu = false;
 
 	Scanner in = new Scanner(System.in);
