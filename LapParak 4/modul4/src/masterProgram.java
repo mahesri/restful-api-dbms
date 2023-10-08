@@ -17,28 +17,25 @@ private static Scanner in = new Scanner(System.in);
 
 public static void mencariDataLinear(formatBiodata biodataMahasiswa[]){
 
-	String kataKunci;
-	int lokasi = -1;
-	boolean statusKetemu = false;
+String kataKunci;
+int lokasi = -1;
+boolean dataKetemu = false;
 
-	System.out.print("Masukan kata kunci : ");
-	kataKunci = in.next();
+System.out.print("Silakan masukkan kataKunci data yang anda cari :");
+kataKunci = in.next();
 
-	for(int i = 0; i <= N-1; i++){
 
-	if(biodataMahasiswa[i].nama.equals(kataKunci)){
+int i = 0;
 
-		statusKetemu = true;
+while ((i <=N-1) && (dataKetemu == false)){
+
+	if(kataKunci.equals(biodataMahasiswa[i].nama)){
+		dataKetemu = true;
 		lokasi = i;
-		break;
 		}
-		}
-		if(statusKetemu == true){
-		System.out.println("Data yang Anda cari KETEMU dilarik ke-"+lokasi);
-			}else{
-				System.out.println("Maap ganteng. Data tidak ditemukan");
-			}
-
+	i++;
+	}
+	System.out.println("Setatus ketemu : "+dataKetemu+" diposisi ke-"+lokasi);
 	}
 
 public static void inisialisasiData(formatBiodata biodataMahasiswa[]){
