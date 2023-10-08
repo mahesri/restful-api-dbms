@@ -34,7 +34,7 @@ public static void mencariDataLinear(formatBiodata biodataMahasiswa[]){
 		}
 		}
 		if(statusKetemu == true){
-		System.out.println("Data ditemukan! "+lokasi);
+		System.out.println("Data yang Anda cari KETEMU dilarik ke-"+lokasi);
 			}else{
 				System.out.println("Maap ganteng. Data tidak ditemukan");
 			}
