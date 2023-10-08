@@ -13,7 +13,7 @@ class formatBiodata {
 public class masterProgram {
 
 private static int N = 10;
-Scanner in = new Scanner(System.in);
+private static Scanner in = new Scanner(System.in);
 
 public static void mencariDataLinear(formatBiodata biodataMahasiswa[]){
 
@@ -26,7 +26,7 @@ public static void mencariDataLinear(formatBiodata biodataMahasiswa[]){
 
 	for(int i = 0; i <= N-1; i++){
 
-	if(biodataMahasiswa[i].nama.equals(katakunci)){
+	if(biodataMahasiswa[i].nama.equals(kataKunci)){
 
 		statusKetemu = true;
 		lokasi = i;
