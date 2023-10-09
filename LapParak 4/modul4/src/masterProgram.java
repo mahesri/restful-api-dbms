@@ -15,29 +15,6 @@ public class masterProgram {
 private static int N = 10;
 private static Scanner in = new Scanner(System.in);
 
-public static void mencariDataLinear(formatBiodata biodataMahasiswa[]){
-
-String kataKunci;
-int lokasi = -1;
-boolean dataKetemu = false;
-
-System.out.print("Silakan masukkan kataKunci data yang anda cari :");
-kataKunci = in.next();
-
-
-int i = 0;
-
-while ((i <=N-1) && (dataKetemu == false)){
-
-	if(kataKunci.equals(biodataMahasiswa[i].nama)){
-		dataKetemu = true;
-		lokasi = i;
-		}
-	i++;
-	}
-	System.out.println("Setatus ketemu : "+dataKetemu+" diposisi ke-"+lokasi);
-	}
-
 public static void inisialisasiData(formatBiodata biodataMahasiswa[]){
 
 		biodataMahasiswa[0] = new formatBiodata();
@@ -152,6 +129,47 @@ public static void inisialisasiData(formatBiodata biodataMahasiswa[]){
 		biodataMahasiswa[9].ipk = (float)3.6;
 }
 
+public static void mencariDataBiner(formatBiodata biodataMahasiswa[]){
+	String kataKunci;
+	int lokasiData = -1;
+	boolean setatusKetemu = falseNovita;
+
+	System.out.print("Masukan kata kunci Anda : ");
+	kataKunci = in.next();
+
+	int atas, bawah, tengah;
+	atas = 0;
+	bawah = N -1;
+	tengah = (atas + bawah) / 2;
+
+	while((setatusKetemu == false) && (bawah - atas != 1)) {
+		System.out.println(biodataMahasiswa[tengah].nama+" <----> "+kataKunci);
+
+	if(kataKunci.compareTo(biodataMahasiswa[tengah].nama)< 0){
+
+		bawah = tengah;
+		tengah = (atas + bawah) /2;
+
+		}else if(kataKunci.compareTo(biodataMahasiswa[tengah].nama)>0){
+
+		atas = tengah;
+		tengah = (atas + bawah) / 2;
+
+			}else{
+
+			setatusKetemu = true;
+			lokasiData = tengah;
+				}
+
+			}
+
+			if(setatusKetemu == true){
+			System.out.println("Data yang Anda cari KETEMU di lakrik ke-"+ lokasiData);
+					}else{
+			System.out.println("Maap. Nama yang Anda cari tidak ditemukan");
+						}
+	}
+
 public static void tampilkanData(formatBiodata biodataMahasiswa[]){
 
 	System.out.println("--------------------------------------------------");
@@ -175,7 +193,7 @@ public static void main(String[]args){
 
 formatBiodata biodataMahasiswa[] = new formatBiodata[N];
 inisialisasiData(biodataMahasiswa);
-mencariDataLinear(biodataMahasiswa);
+mencariDataBiner(biodataMahasiswa);
 tampilkanData(biodataMahasiswa);
 
 	}
