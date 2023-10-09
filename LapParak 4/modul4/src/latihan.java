@@ -1,18 +1,9 @@
-import java.util.Scanner;
-class formatBiodata {
-	String nama;
-	String alamat;
-	int umur;
-	char jekel;
-	String[] hobi = new String[3];
-	float ipk;
-	}
+import java.util.*;
+public class latihan {
 
-public class modMasProg {
     private static int N = 10;
-private static Scanner in = new Scanner(System.in);
-
-public static void inisialisasiData(formatBiodata biodataMahasiswa[]){
+    
+    public static void inisialisasiData(formatBiodata biodataMahasiswa[]){
 
         biodataMahasiswa[0] = new formatBiodata();
         biodataMahasiswa[0].nama = "Ahmad";
@@ -119,72 +110,31 @@ public static void inisialisasiData(formatBiodata biodataMahasiswa[]){
 
 }
 
-public static void mencariDataBiner(formatBiodata biodataMahasiswa[]){
-	String kataKunci;
-	int lokasiData = -1;
-	boolean setatusKetemu = false;
+ublic static void tampilkanDataBerdasarkanJenisKelamin(formatBiodata biodataMahasiswa[], char jenisKelamin) {
+    System.out.println("--------------------------------------------------");
+    System.out.println("NAMA ALAMAT UMUR JEKEL HOBI[0] HOBI[1] HOBI[2] IPK");
+    System.out.println("--------------------------------------------------");
 
-	System.out.print("Masukan kata kunci Anda : ");
-	kataKunci = in.next();
+    for (int i = 0; i < biodataMahasiswa.length; i++) {
+        if (biodataMahasiswa[i].jekel == jenisKelamin) {
+            System.out.print(biodataMahasiswa[i].nama + "\t");
+            System.out.print(biodataMahasiswa[i].alamat + "\t");
+            System.out.print(biodataMahasiswa[i].umur + "\t");
+            System.out.print(biodataMahasiswa[i].jekel + "\t");
+            for (int j = 0; j < 3; j++) {
+                System.out.print(biodataMahasiswa[i].hobi[j] + "\t");
+            }
+            System.out.println(biodataMahasiswa[i].ipk + "\t");
+        }
+    }
+    System.out.println("--------------------------------------------------");
+}
 
-	int atas, bawah, tengah;
-	atas = 0;
-	bawah = N -1;
-	tengah = (atas + bawah) / 2;
+public static void main(String[] args) {
+    formatBiodata biodataMahasiswa[] = new formatBiodata[N];
+    inisialisasiData(biodataMahasiswa);
+    tampilkanDataBerdasarkanJenisKelamin(biodataMahasiswa, 'L');
+}
 
-	while((setatusKetemu == false) && (bawah - atas != 1)) {
-		System.out.println(biodataMahasiswa[tengah].nama+" <----> "+kataKunci);
 
-	if(kataKunci.compareTo(biodataMahasiswa[tengah].nama)< 0){
-
-		bawah = tengah;
-		tengah = (atas + bawah) /2;
-
-		}else if(kataKunci.compareTo(biodataMahasiswa[tengah].nama)>0){
-
-		atas = tengah;
-		tengah = (atas + bawah) / 2;
-
-			}else{
-
-			setatusKetemu = true;
-			lokasiData = tengah;
-				}
-
-			}
-
-			if(setatusKetemu == true){
-			System.out.println("Data yang Anda cari KETEMU di lakrik ke-"+ lokasiData);
-					}else{
-			System.out.println("Maap. Nama yang Anda cari tidak ditemukan");
-						}
-	}
-
-public static void tampilkanData(formatBiodata biodataMahasiswa[]){
-
-	System.out.println("--------------------------------------------------");
-	System.out.println("NAMA ALAMAT UMUR JEKEL HOBI[0] HOBI[1] HOBI[2] IPK");
-	System.out.println("--------------------------------------------------");
-
-	for(int i = 0; i <= N-1; i++){
-		System.out.print(biodataMahasiswa[i].nama+"\t");
-		System.out.print(biodataMahasiswa[i].alamat+"\t");
-		System.out.print(biodataMahasiswa[i].umur+"\t");
-		System.out.print(biodataMahasiswa[i].jekel+"\t");
-		for(int j = 0; j < 3; j++){
-		System.out.print(biodataMahasiswa[i].hobi[j]+"\t");
-		}
-		System.out.println(biodataMahasiswa[i].ipk+"\t");
-		}
-	System.out.println("--------------------------------------------------");
-	}
-
-public static void main(String[]args){
-
-formatBiodata biodataMahasiswa[] = new formatBiodata[N];
-inisialisasiData(biodataMahasiswa);
-mencariDataBiner(biodataMahasiswa);
-tampilkanData(biodataMahasiswa);
-
-	}
 }
