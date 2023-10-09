@@ -1,14 +1,16 @@
 public static void mencariDataBiner(formatBiodata biodataMahasiswa[]){
 	String kataKunci;
-	int lokasiData = -1;
-	boolean setatusKetemu;
+	int lokasi = -1;
+	boolean setatusKetemu = false;
+
+	Scanner in = new Scanner(System.in);
 
 	System.out.print("Masukan kata kunci Anda : ");
 	kataKunci = in.next();
 
 	int atas, bawah, tengah;
 	atas = 0;
-	bawah = N -1;
+	bawah = N-1;
 	tengah = (atas + bawah) / 2;
 
 	while((setatusKetemu == false) && (bawah - atas != 1)) {

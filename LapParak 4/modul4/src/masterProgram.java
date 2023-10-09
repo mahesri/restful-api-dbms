@@ -132,7 +132,7 @@ public static void inisialisasiData(formatBiodata biodataMahasiswa[]){
 public static void mencariDataBiner(formatBiodata biodataMahasiswa[]){
 	String kataKunci;
 	int lokasiData = -1;
-	boolean setatusKetemu = falseNovita;
+	boolean setatusKetemu = false;
 
 	System.out.print("Masukan kata kunci Anda : ");
 	kataKunci = in.next();
