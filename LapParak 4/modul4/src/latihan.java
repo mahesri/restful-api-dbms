@@ -2,7 +2,7 @@ import java.util.*;
 public class latihan {
 
     private static int N = 10;
-    
+
     public static void inisialisasiData(formatBiodata biodataMahasiswa[]){
 
         biodataMahasiswa[0] = new formatBiodata();
@@ -110,13 +110,13 @@ public class latihan {
 
 }
 
-ublic static void tampilkanDataBerdasarkanJenisKelamin(formatBiodata biodataMahasiswa[], char jenisKelamin) {
+public static void tampilDataJekel(formatBiodata biodataMahasiswa[]) {
     System.out.println("--------------------------------------------------");
     System.out.println("NAMA ALAMAT UMUR JEKEL HOBI[0] HOBI[1] HOBI[2] IPK");
     System.out.println("--------------------------------------------------");
 
-    for (int i = 0; i < biodataMahasiswa.length; i++) {
-        if (biodataMahasiswa[i].jekel == jenisKelamin) {
+    for (int i = 0; i <= N -1; i++) {
+        if (biodataMahasiswa[i].jekel == 'L') {
             System.out.print(biodataMahasiswa[i].nama + "\t");
             System.out.print(biodataMahasiswa[i].alamat + "\t");
             System.out.print(biodataMahasiswa[i].umur + "\t");
@@ -133,7 +133,7 @@ ublic static void tampilkanDataBerdasarkanJenisKelamin(formatBiodata biodataMaha
 public static void main(String[] args) {
     formatBiodata biodataMahasiswa[] = new formatBiodata[N];
     inisialisasiData(biodataMahasiswa);
-    tampilkanDataBerdasarkanJenisKelamin(biodataMahasiswa, 'L');
+    tampilDataJekel(biodataMahasiswa);
 }
 
 
