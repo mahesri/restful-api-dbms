@@ -136,20 +136,20 @@ public static void tampilData(formatBiodata biodataMahasiswa[]){
 	System.out.println("--------------------------------------------------");
 	System.out.println("NAMA ALAMAT UMUR JEKEL HOBI[0] HOBI[1] HOBI[2] IPK");
 	System.out.println("--------------------------------------------------");
-	
-	for(int i = 0; i < N - 1; i++){
-		
+
+	for(int i = 0; i <= N - 1; i++){
+
 		System.out.print(biodataMahasiswa[i].nama+"\t");
 		System.out.print(biodataMahasiswa[i].alamat+"\t");
 		System.out.print(biodataMahasiswa[i].umur+"\t");
 		System.out.print(biodataMahasiswa[i].jekel+"\t");
-		
+
 		for(int j = 0; j < 3;j++){
 			System.out.print(biodataMahasiswa[i].hobi[j]+"\t");
 		}
 		System.out.println(biodataMahasiswa[i].ipk+"\t");
 	}
-	
+
 	System.out.println("--------------------------------------------------");
 }
 
@@ -160,7 +160,6 @@ public static void main(String[]args){
 	tampilData(biodataMahasiswa);
 }
 
-
-		}
+}
 
 
