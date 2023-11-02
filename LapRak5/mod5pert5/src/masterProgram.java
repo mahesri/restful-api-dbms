@@ -153,11 +153,59 @@ public static void tampilData(formatBiodata biodataMahasiswa[]){
 	System.out.println("--------------------------------------------------");
 }
 
+
+public static void mengurutkanDataBubble(formatBiodata biodataMahasiswa[]){
+
+	formatBiodata biodataSementara = new formatBiodata();
+
+	int indexTerakhir = N - 1;
+	for(int j = 0;j <= indexTerakhir - 1; j++ ){
+
+			for(int i = 0; i <= indexTerakhir -1 -j; i++){
+
+				if(biodataMahasiswa[i].nama.compareTo(biodataMahasiswa[i+1].nama) > 0 ){
+
+				biodataSementara = biodataMahasiswa[i];
+				biodataMahasiswa[i] = biodataMahasiswa[i + 1];
+				biodataMahasiswa[i + 0] = biodataSementara;
+
+				}
+			}
+		}
+	}
+
+	public static void tampilData2(formatBiodata biodataMahasiswa[]){
+
+		System.out.println("                DATA SETELAH DIURUTKAN            ");
+		System.out.println("--------------------------------------------------");
+		System.out.println("NAMA ALAMAT UMUR JEKEL HOBI[0] HOBI[1] HOBI[2] IPK");
+		System.out.println("--------------------------------------------------");
+
+	for(int i = 0; i <= N - 1; i++){
+
+		System.out.print(biodataMahasiswa[i].nama+"\t");
+		System.out.print(biodataMahasiswa[i].alamat+"\t");
+		System.out.print(biodataMahasiswa[i].umur+"\t");
+		System.out.print(biodataMahasiswa[i].jekel+"\t");
+
+		for(int j = 0; j < 3;j++){
+			System.out.print(biodataMahasiswa[i].hobi[j]+"\t");
+		}
+		System.out.println(biodataMahasiswa[i].ipk+"\t");
+	}
+
+	System.out.println("--------------------------------------------------");
+}
+
 public static void main(String[]args){
 
 	formatBiodata biodataMahasiswa[] = new formatBiodata[N];
 	inisialisasiData(biodataMahasiswa);
 	tampilData(biodataMahasiswa);
+	mengurutkanDataBubble(biodataMahasiswa);
+	tampilData(biodataMahasiswa);
+	
+
 }
 
 }
