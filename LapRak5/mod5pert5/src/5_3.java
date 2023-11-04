@@ -19,10 +19,16 @@ public static void mengurutkanDataInsertion(formatBiodata biodataMahasiswa[]){
 			if(biodataMahasiswa[cari].nama.compareTo(biodataSementara.nama) > 0)
 			{
 
-				biodataMahasiswa[cari]
-				}
-			}
+				biodataMahasiswa[cari + 1] = biodataMahasiswa[cari];
+				biodataMahasiswa[cari] = biodataSementara;
+				cari--; //Cari bergeser ke kiri 1 langkah
+				}else{
+					biodataMahasiswa[cari + 1] = biodataSementara;
+					cari=-1;
 
+					}
+			}
+			awal++;
 		}
 
 
