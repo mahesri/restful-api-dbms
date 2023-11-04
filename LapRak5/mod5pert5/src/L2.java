@@ -11,7 +11,7 @@ class formatBiodata {
 
 	}
 
-	public class masterProgram {
+	public class L2 {
 
 	private static int N = 10;
 	private static Scanner in = new Scanner(System.in);
