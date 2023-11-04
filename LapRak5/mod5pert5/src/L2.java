@@ -130,99 +130,72 @@ public static void inisialisasiData(formatBiodata biodataMahasiswa[]){
 		biodataMahasiswa[9].ipk = (float)3.6;
 
 	}
-
 	public static void tampilData(formatBiodata biodataMahasiswa[]){
-
 	System.out.println("--------------------------------------------------");
 	System.out.println("NAMA ALAMAT UMUR JEKEL HOBI[0] HOBI[1] HOBI[2] IPK");
 	System.out.println("--------------------------------------------------");
-
 	for(int i = 0; i <= N - 1; i++){
-
 		System.out.print(biodataMahasiswa[i].nama+"\t");
 		System.out.print(biodataMahasiswa[i].alamat+"\t");
 		System.out.print(biodataMahasiswa[i].umur+"\t");
 		System.out.print(biodataMahasiswa[i].jekel+"\t");
-
 		for(int j = 0; j < 3;j++){
 			System.out.print(biodataMahasiswa[i].hobi[j]+"\t");
 		}
 		System.out.println(biodataMahasiswa[i].ipk+"\t");
 	}
-
 	System.out.println("--------------------------------------------------");
 }
 
 
-public static void mengurutkanDataSelection(formatBiodata biodataMahasiswa[]) {
+//Fungsi Insertion
 
-formatBiodata biodataSementara = new formatBiodata();
+public static void mengurutkanDataInsertion(formatBiodata biodataMahasiswa[]){
 
-String teksTerkecil = "";
-int lokasi=0;
+	formatBiodata biodataSementara = new formatBiodata();
+	//untuk menentukan awal dari data sisi kanan (sisi yang masih berantakan)
+	int awal;
+	//untuk mencari posisi yg tepat pada sisi kiri (sisi yang sudah terurutkan )
+	int cari;
+	awal = 1;
+	while (awal <= N-1){
 
-//bagian mengurutkan dengan teknik selection
-for (int i=0; i<=N-2; i++) {
-//data pertama yang dibaca dianggap data terkecil
-teksTerkecil = "zzzzzzz";
-//menentukan bilangan terkecil mulai larik ke i+1 sampai N-1
-for (int S=i+1; S<=N-1; S++){
-
-if (biodataMahasiswa[S].nama.compareTo(teksTerkecil)<0) { //jika data[S] adlh bilangan terkecil, simpan di teksTerkecil
-teksTerkecil = biodataMahasiswa[S].nama;
-//mencatat posisi dimana data terkecil ada
-lokasi = S;
-}
-}
-//membandingkan data[lokasi] yang adalah data terkecil,
-// versus data[i] yang adalah ‘diagonal ke-i'
-if (biodataMahasiswa[i].nama.compareTo
-(biodataMahasiswa[lokasi].nama)>0)
-{
-//tukar posisi
-{ biodataSementara = biodataMahasiswa[i];
-biodataMahasiswa[i] = biodataMahasiswa[lokasi];
-biodataMahasiswa[lokasi] = biodataSementara;
-}
-}
-}
-}
-
+		biodataSementara = biodataMahasiswa[awal];
+		cari = awal - 1;
+		//cari akan bergerak dari kanan (awal-1) ke kiri
+		while(cari >= 0){
+			if(biodataMahasiswa[cari].nama.compareTo(biodataSementara.nama) > 0)
+			{
+				biodataMahasiswa[cari + 1] = biodataMahasiswa[cari];
+				biodataMahasiswa[cari] = biodataSementara;
+				cari--; //Cari bergeser ke kiri 1 langkah
+				}else{
+					biodataMahasiswa[cari + 1] = biodataSementara;
+					cari=-1;
+		}}
+			awal++;
+		}}
 	public static void tampilData2(formatBiodata biodataMahasiswa[]){
-
-		System.out.println("                DATA SETELAH DIURUTKAN            ");
+	System.out.println("                DATA SETELAH DIURUTKAN            ");
 		System.out.println("--------------------------------------------------");
 		System.out.println("NAMA ALAMAT UMUR JEKEL HOBI[0] HOBI[1] HOBI[2] IPK");
 		System.out.println("--------------------------------------------------");
-
 	for(int i = 0; i <= N - 1; i++){
-
 		System.out.print(biodataMahasiswa[i].nama+"\t");
 		System.out.print(biodataMahasiswa[i].alamat+"\t");
 		System.out.print(biodataMahasiswa[i].umur+"\t");
 		System.out.print(biodataMahasiswa[i].jekel+"\t");
-
 		for(int j = 0; j < 3;j++){
 			System.out.print(biodataMahasiswa[i].hobi[j]+"\t");
 		}
 		System.out.println(biodataMahasiswa[i].ipk+"\t");
 	}
-
 	System.out.println("--------------------------------------------------");
 }
-
 public static void main(String[]args){
-
 	formatBiodata biodataMahasiswa[] = new formatBiodata[N];
-
 	inisialisasiData(biodataMahasiswa);
 	tampilData(biodataMahasiswa);
-	mengurutkanDataSelection(biodataMahasiswa);
+	mengurutkanDataInsertion(biodataMahasiswa);
 	tampilData2(biodataMahasiswa);
-
-
-}
-
-}
-
-
+}}
