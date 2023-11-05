@@ -8,7 +8,6 @@ class formatBiodata {
 	char jekel;
 	String[] hobi = new String[3];
 	float ipk;
-
 }
 
 public class masterProgram {
@@ -170,12 +169,10 @@ public class masterProgram {
 				}
 			}
 			if (biodataMahasiswa[i].nama.compareTo(biodataMahasiswa[lokasi].nama) > 0) {
-				{
 
-					biodataSementara = biodataMahasiswa[i];
-					biodataMahasiswa[i] = biodataMahasiswa[lokasi];
-					biodataMahasiswa[lokasi] = biodataSementara;
-				}
+				biodataSementara = biodataMahasiswa[i];
+				biodataMahasiswa[i] = biodataMahasiswa[lokasi];
+				biodataMahasiswa[lokasi] = biodataSementara;
 
 			}
 
