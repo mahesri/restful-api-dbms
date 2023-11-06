@@ -12,8 +12,9 @@ class formatBiodata {
 
 public class masterProgram {
 
-	private static int N = 10;
 	private static Scanner in = new Scanner(System.in);
+	private static int N = 10;
+	
 
 	public static void inisialisasiData(formatBiodata biodataMahasiswa[]) {
 
@@ -150,32 +151,26 @@ public class masterProgram {
 		System.out.println("--------------------------------------------------");
 	}
 
-	public static void mengurutkanDataSelection(formatBiodata biodataMahasiswa[]) {
+	public static void mengurutkanDataInsertion(formatBiodata biodataMahasiswa[]) {
 
 		formatBiodata biodataSementara = new formatBiodata();
 
-		String teksTerkecil = "";
-		int lokasi = 0;
+		int awal;
+		int cari;
+		awal = 1;
 
-		for (int i = 0; i <= N - 2; i++) {
+		while (awal <= N-1) {
 
-			teksTerkecil = "zzzzzzz";
-
-			for (int S = i + 1; S <= N - 1; S++) {
-
-				if (biodataMahasiswa[S].nama.compareTo(teksTerkecil) < 0) {
-					teksTerkecil = biodataMahasiswa[S].nama;
-					lokasi = S;
+			biodataSementara = biodataMahasiswa[awal];
+			cari = awal - 1;
+			
+			while(cari >=0){
+			
+			if(biodataMahasiswa[cari].nama.compareTo(biodataSementara.nama)>0){
+				
 				}
-			}
-			if (biodataMahasiswa[i].nama.compareTo(biodataMahasiswa[lokasi].nama) > 0) {
-
-				biodataSementara = biodataMahasiswa[i];
-				biodataMahasiswa[i] = biodataMahasiswa[lokasi];
-				biodataMahasiswa[lokasi] = biodataSementara;
 
 			}
-
 		}
 
 	}
@@ -209,9 +204,7 @@ public class masterProgram {
 
 		inisialisasiData(biodataMahasiswa);
 		tampilData(biodataMahasiswa);
-		mengurutkanDataSelection(biodataMahasiswa);
+		mengurutkanDataInsertion(biodataMahasiswa);
 		tampilData2(biodataMahasiswa);
-
 	}
-
 }
