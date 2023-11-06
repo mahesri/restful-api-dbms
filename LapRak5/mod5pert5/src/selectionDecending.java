@@ -130,7 +130,7 @@ public static void mengurutkanDataSelection(formatBiodata biodataMahasiswa[]){
 
 		for (int S = i + 1; S <= N-1;S++) {
 
-			if(biodataMahasiswa[S].nama.compareTo(teksTerkecil)<0){
+			if(biodataMahasiswa[S].nama.compareTo(teksTerkecil)>0 && biodataMahasiswa[S].nama > biodataMahasiswa[i].nama){
 				teksTerkecil = biodataMahasiswa[S].nama;
 				lokasi = S;
 			}
@@ -138,8 +138,8 @@ public static void mengurutkanDataSelection(formatBiodata biodataMahasiswa[]){
 		if(biodataMahasiswa[i].nama.compareTo(biodataMahasiswa[lokasi].nama) > 0){ {
 
 			biodataSementara = biodataMahasiswa[i];
-			biodataMahasiswa[i] = biodataMahasiswa[i + 1];
-			biodataMahasiswa[i+1] = biodataSementara;
+			biodataMahasiswa[i] = biodataMahasiswa[lokasi];
+			biodataMahasiswa[lokasi] = biodataSementara;
 		}
 
 		}
