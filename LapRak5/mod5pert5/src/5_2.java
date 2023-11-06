@@ -11,12 +11,12 @@ public static void mengurutkanDataSelection(formatBiodata biodataMahasiswa[]){
 
 		for (int S = i + 1; S <= N-1;S++) {
 
-			if(biodataMahasiswa[S].nama.compareTo(teksTerkecil)<0){
+			if(biodataMahasiswa[S].nama.compareTo(teksTerkecil)>0){
 				teksTerkecil = biodataMahasiswa[S].nama;
 				lokasi = S;
 			}
 		}
-		if(biodataMahasiswa[i].nama.compareTo(biodataMahasiswa[lokasi].nama) > 0){ {
+		if(biodataMahasiswa[i].nama.compareTo(biodataMahasiswa[lokasi].nama) < 0){ {
 
 			biodataSementara = biodataMahasiswa[i];
 			biodataMahasiswa[i] = biodataMahasiswa[i + 1];
