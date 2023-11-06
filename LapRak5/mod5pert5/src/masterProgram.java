@@ -171,6 +171,7 @@ public class masterProgram {
 				biodataMahasiswa[cari+1] = biodataMahasiswa[cari];
 				biodataMahasiswa[cari] = biodataSementara;
 				cari--;
+				
 				}else{
 					biodataMahasiswa[cari+1] = biodataSementara;
 					cari=-1;
