@@ -168,9 +168,16 @@ public class masterProgram {
 			
 			if(biodataMahasiswa[cari].nama.compareTo(biodataSementara.nama)>0){
 				
+				biodataMahasiswa[cari+1] = biodataMahasiswa[cari];
+				biodataMahasiswa[cari] = biodataSementara;
+				cari--;
+				}else{
+					biodataMahasiswa[cari+1] = biodataSementara;
+					cari=-1;
 				}
 
 			}
+			awal++;
 		}
 
 	}
