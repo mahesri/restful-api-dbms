@@ -126,11 +126,11 @@ public static void mengurutkanDataSelection(formatBiodata biodataMahasiswa[]){
 
 	for (int i = 0 ; i <= N - 2;i++){
 
-		teksTerkecil = "zzzzzzz";
+		teksTerkecil = "";
 
 		for (int S = i + 1; S <= N-1;S++) {
 
-			if(biodataMahasiswa[S].nama.compareTo(teksTerkecil)>0 && biodataMahasiswa[S].nama > biodataMahasiswa[i].nama){
+			if(biodataMahasiswa[S].nama.compareTo(teksTerkecil)<0){
 				teksTerkecil = biodataMahasiswa[S].nama;
 				lokasi = S;
 			}
