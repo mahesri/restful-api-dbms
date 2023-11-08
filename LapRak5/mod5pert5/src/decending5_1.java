@@ -117,20 +117,24 @@ public static void inisialisasiData(formatBiodata biodataMahasiswa[]){
 	biodataMahasiswa[9].ipk = (float)3.6;
 }
 
-public static void mengurutkanDataBubbleIpk(formatBiodata biodataMahasiswa[]){
+public static void mengurutkanIPK2(formatBiodata biodataMahasiswa[]) {
+    formatBiodata biodataSementara = new formatBiodata();
+    double ipkTerbesar = 0.0;
+    int lokasi = 0;
 
-formatBiodata biodataSementara = new formatBiodata();
+    for (int i = 0; i <= N - 2; i++) {
+        ipkTerbesar = 0;
 
-int indexTerakhir = N - 1;
-
-for(int j = 0; j <= indexTerakhir -1;j++ ){
-
-	for(int i = 0;i <= indexTerakhir-1 -j ;i++){
-		if(biodataMahasiswa[i].ipk < biodataMahasiswa[i + 1].ipk){
-			biodataSementara = biodataMahasiswa[i];
-			biodataMahasiswa[i] = biodataMahasiswa[i + 1 ];
-			biodataMahasiswa[i + 1] = biodataSementara;
-	}}}}
+        for (int S = i + 1; S <= N - 1; S++) {
+            if (biodataMahasiswa[S].ipk < ipkTerbesar) {
+                ipkTerbesar = biodataMahasiswa[S].ipk;
+                lokasi = S;
+            }}
+        if (biodataMahasiswa[i].ipk > biodataMahasiswa[lokasi].ipk) {
+            biodataSementara = biodataMahasiswa[i];
+            biodataMahasiswa[i] = biodataMahasiswa[lokasi];
+            biodataMahasiswa[lokasi] = biodataSementara;
+        }}}
 
 public static void tampilData(formatBiodata biodataMahasiswa[]){
 
@@ -154,7 +158,7 @@ public static void tampilData(formatBiodata biodataMahasiswa[]){
 public static void main(String[]args){
 	formatBiodata biodataMahasiswa[] = new formatBiodata[N];
 	inisialisasiData(biodataMahasiswa);
-	mengurutkanDataBubbleIpk(biodataMahasiswa);
+	mengurutkanIPK2(biodataMahasiswa);
 	tampilData(biodataMahasiswa);
 }
 
