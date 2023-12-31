@@ -6,8 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainController {
 
-    @GetMapping(value=" ") //we got an error from here
+    @GetMapping(value=" ") //here to get an mapping for the url
     public String showHomePage(){
         return"index";
     }
+
 }
