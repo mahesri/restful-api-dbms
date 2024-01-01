@@ -4,7 +4,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.NoRepositoryBean;
 
 import java.util.Optional;
-@NoRepositoryBean
+
 public interface UserRepository extends CrudRepository<User, Integer> {
     @Override
     default <S extends User> S save(S entity) {
