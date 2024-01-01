@@ -9,6 +9,8 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.annotation.Rollback;
 
+import java.util.Optional;
+
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Rollback(false)
@@ -18,10 +20,10 @@ public class UserRepositoryTests {
     @Test
     public void testAddNew(){
         User user = new User();
-            user.setEmail("riyadi.riyadi@students.utdi.ac.id");
-            user.setPassword("mahesri77");
-            user.setFirstname("Riyadi");
-            user.setLastname("Doang");
+            user.setEmail("fani@gmail.com");
+            user.setPassword("nurafani");
+            user.setFirstname("Indah");
+            user.setLastname("Nurafani");
 
             User savedUser = repo.save(user);
 
@@ -29,5 +31,27 @@ public class UserRepositoryTests {
         Assertions.assertThat(savedUser.getId()).isGreaterThan(0);
 
 
+    }
+    @Test
+    public void testListAll(){
+
+        Iterable<User> users = repo.findAll();
+        Assertions.assertThat(users).hasSizeGreaterThan(0);
+
+        for (User user : users){
+            System.out.println(user);
+        }
+    }
+
+    @Test
+    public void testUpdate() {
+        Integer userId = 1;
+        Optional<User> optionalUser = repo.findById(userId);
+        User user = optionalUser.get();
+        user.setPassword("admin");
+        repo.save(user);
+
+        User updateUser =  repo.findById(userId).get();
+        Assertions.assertThat(updateUser.getPassword()).isEqualTo("admin");
     }
 }
