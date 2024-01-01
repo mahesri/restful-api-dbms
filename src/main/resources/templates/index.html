@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>MyDBMS</title>
-    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" type="text/css"/>
-
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" type="text/css"/>
 </head>
 <body>
 <div class="container-fluid text-center">
     <h1>Selamat Datang di Aplikasi DBMS </h1>
 
-    <h2><a href="/users">Kelola Pengguna</a></h2>
+    <a class="h2" th:href="@{/users}">Kelola Pengguna</a>
 </div>
 </body>
 </html>
