@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Kelola Pengguna</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" type="text/css"/>
+</head>
+<body>
+<div class="container-fluid text-center">
+    <div><h2>Kelelola Pengguna</h2></div>
+    <div>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>EMAIL</th>
+                <th>NAMA DEPAN</th>
+                <th>NAMA BELAKANG</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="user : ${listUser}">
+                <tr>
+                    <td>[[${user.id}]]</td>
+                    <!-- Tambahkan kolom-kolom lain sesuai kebutuhan -->
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+</body>
+</html>
