@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
 <head>
     <meta charset="UTF-8">
-    <title>Kelola Pengguna</title>
+    <title>Edit User</title>
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" type="text/css"/>
 </head>
 <body>
 <div class="container-fluid text-center">
     <div><h2>Kelelola Pengguna</h2></div>
+    <div class="m-2">
+        <a class="h3" th:href="@{/user/new}">Tambah Pengguna</a>
+    </div>
+
+    <div th:if="${message}" class="alert alert-success text-center">
+        [[${message}]]
+
+    </div>
+
     <div>
         <table class="table table-bordered">
             <thead class="thead-dark">
@@ -16,6 +27,7 @@
                 <th>EMAIL</th>
                 <th>NAMA DEPAN</th>
                 <th>NAMA BELAKANG</th>
+                <th>ENABLE</th>
                 <th></th>
             </tr>
             </thead>
@@ -23,7 +35,15 @@
             <th:block th:each="user : ${listUser}">
                 <tr>
                     <td>[[${user.id}]]</td>
-                    <!-- Tambahkan kolom-kolom lain sesuai kebutuhan -->
+                    <td>[[${user.email}]]</td>
+                    <td>[[${user.firstName}]]</td>
+                    <td>[[${user.lastName}]]</td>
+                    <td>[[${user.enable}]]</td>
+                    <td>
+                        <a class="h4 mr-3" th:href="@{'/user/edit/' + ${user.id}'}">Edit</a>
+                        <a class="h4" th:href="@{'/user/delete/' + ${user.id}'}">Delete</a>
+                    </td>
+
                 </tr>
             </th:block>
             </tbody>
