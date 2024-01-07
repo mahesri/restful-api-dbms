@@ -12,4 +12,8 @@ To run this application on your computer, at least you need:
 
 You need to run the main class [here]([here](src/main/java/DBMS/MydbmsApplication.java))
 
-And open new tab on your browser type `http://localhost:8080`
+Open new tab on Your browser type `http://localhost:8080` You will probably see results like in the photo below
+
+![localhost result](assets/01-Localhost-output.PNG)
+
+I also put JDBC driver [here](assets/mysql-connector-j-8.0.32.jar) if necessary.
