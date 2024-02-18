@@ -1,6 +1,6 @@
 ## A RESTful API for database management system
 
-This app build using spring boot. 
+This app build using [Spring Boot](https://spring.io/projects/spring-boot).
 
 To run this application on your computer, at least you need:
 
@@ -12,7 +12,7 @@ To run this application on your computer, at least you need:
 
 You need to run the main class
 
-Open new tab on Your browser type `http://localhost:8080` You will probably see results like in the photo below
+Open new tab on Your browser type `http://localhost:8080` You will probably see a results like at the photo below.
 
 ![localhost result](assets/01-Localhost-output.PNG)
 
