@@ -1,4 +1,4 @@
-## An RESTful API for database management system
+## A RESTful API for database management system
 
 This app build using spring boot. 
 
@@ -10,7 +10,7 @@ To run this application on your computer, at least you need:
 
 ## Getting Started
 
-You need to run the main class [here]([here](src/main/java/DBMS/MydbmsApplication.java))
+You need to run the main class
 
 Open new tab on Your browser type `http://localhost:8080` You will probably see results like in the photo below
 
