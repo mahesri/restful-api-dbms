@@ -9,14 +9,22 @@ import java.util.List;
 
 @Controller
 public class UserController {
+
+
 @Autowired private UserService service;
 
-@GetMapping("/users")
-public String showUserList(Model model){
-    List<User> listUsers = service.listAll();
-    model.addAttribute("listUsers", listUsers);
+    @GetMapping("/users")
+    public String showUserList(Model model){
+        List<User> listUsers = service.listAll();
+        model.addAttribute("listUsers", listUsers);
 
-    return "users";
+        return "users";
+    }
+
+    @GetMapping("/users/new")
+    public String showNewForm(Model model){
 
     }
+
+
 }

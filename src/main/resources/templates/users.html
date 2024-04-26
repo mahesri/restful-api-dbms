@@ -1,32 +1,52 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Kelola Pengguna</title>
-    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{webjars/bootstrap/css/bootstrap.min.css}"/>
+    <title>Manage Users</title>
 </head>
 <body>
+
 <div class="container-fluid text-center">
-    <div><h2>Kelelola Pengguna</h2></div>
+    <div><h2>Manage Users</h2></div>
+    
+    <div class="m-2">
+        <a class="h3" th:href="@{users/new}">Add New User</a>
+    </div>
+
     <div>
         <table class="table table-bordered">
             <thead class="thead-dark">
             <tr>
                 <th>ID</th>
-                <th>EMAIL</th>
-                <th>NAMA DEPAN</th>
-                <th>NAMA BELAKANG</th>
+                <th>E-mail</th>
+                <th>First Name</th>
+                <th>Last Name</th>
                 <th></th>
             </tr>
             </thead>
+
             <tbody>
-            <th:block th:each="user : ${listUser}">
-                <tr>
-                    <td>[[${user.id}]]</td>
-                    <!-- Tambahkan kolom-kolom lain sesuai kebutuhan -->
-                </tr>
-            </th:block>
+
+                <th:block th:each="user : ${listUsers}">
+                    <tr>
+                        <td>[[${user.id}]]</td>
+                        <td>[[${user.email}]]</td>
+                        <td>[[${user.firstName}]]</td>
+                        <td>[[${user.lastName}]]</td>
+                        <td>[[${user.enabled}]]</td>
+                        
+                        <td>
+                            <a class="h4 mr-3" th:href="@{'/users/edit/' +${user.id}}">Edit</a>
+                            <a class="h4" th:href="@{'/users/delete/' +${user.id}}">Delete</a>
+                        </td>
+                    </tr>
+
+                </th:block>
+
             </tbody>
+
         </table>
     </div>
 
