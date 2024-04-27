@@ -20,10 +20,10 @@ public class UserRepositoryTests {
     @Test
     public void testAddNew(){
         User user = new User();
-            user.setEmail("riyadi.uk@gmail.com");
-            user.setPassword("iniRiyadi");
-            user.setFirstName("Riyadi");
-            user.setLastName("Doang");
+            user.setEmail("alexstevenson@gmail.com");
+            user.setPassword("thisalex");
+            user.setFirstName("Alex");
+            user.setLastName("Stevenson");
 
             User savedUser = repo.save(user);
 
@@ -45,14 +45,14 @@ public class UserRepositoryTests {
 
     @Test
     public void testUpdate() {
-        Integer userId = 1;
+        Integer userId = 5;
         Optional<User> optionalUser = repo.findById(userId);
         User user = optionalUser.get();
-        user.setPassword("admin");
+        user.setPassword("thistina");
         repo.save(user);
 
         User updateUser =  repo.findById(userId).get();
-        Assertions.assertThat(updateUser.getPassword()).isEqualTo("admin");
+        Assertions.assertThat(updateUser.getPassword()).isEqualTo("thistina");
     }
 
     @Test
