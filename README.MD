@@ -1,6 +1,8 @@
 ## A REST API of DBMS implement Bootstrap
 
-This app build using [Spring Boot](https://spring.io/projects/spring-boot).
+[Here]() to jump to the over-view.
+
+This application build using [Spring Boot](https://spring.io/projects/spring-boot).
 
 This application is implements:
 
@@ -12,6 +14,8 @@ Learn more about Thymeleaf:
 - [Thymeleaf-documentation](https://www.thymeleaf.org/doc/tutorials/3.0/thymeleafspring.html)
 - [Simple explanation Thymeleaf](https://github.com/dimMaryanto93/thymeleaf-example) in Bahasa.
 
+## Additional
+
 To run this application on host or our local computer, at least we need:
 
 - JDK 17
@@ -21,7 +25,7 @@ To run this application on host or our local computer, at least we need:
 
 Instead of running the application straight away, it would be better if we ensure a connection to the database first.
 
-In `application.properties` as a default 
+In `application.properties` as a default configure the connection to the database as follows: 
 
 ```
 # JDBC driver SQL configuration
@@ -32,7 +36,35 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.properties.hibernate.show_sql=true
 ```
 
-You need to run the main class
+The default schema of the `newuserdb` :
 
-Open new tab on Your browser type `http://localhost:8080` You will probably see a results like at the photo below.
+```
+mysql> use newuserdb;
+Database changed
+mysql> desc user;
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| id         | int         | NO   | PRI | NULL    | auto_increment |
+| email      | varchar(45) | NO   | UNI | NULL    |                |
+| first_name | varchar(45) | NO   |     | NULL    |                |
+| last_name  | varchar(45) | NO   |     | NULL    |                |
+| password   | varchar(15) | NO   |     | NULL    |                |
+| enabled    | bit(1)      | NO   |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+6 rows in set (0.81 sec)
+```
+
+
+After database has conecting successfully, run the main class.
+
+Open new tab on Your browser type `http://localhost:8080`.
+
+## Over-view
+
+This is a Rest Api for a DBMS built using Spring-Boot. This aplication provides operation such as Create, Read, Update, and Delete. These are the four basic operations used to manage data in to the MySql.
+
+Building this application involves: Spring Boot Web, Spring Data JPA & Hibernate, MySQL Database, Thymeleaf, HTML5 & Bootstrap, JUnit 5 & AssertJ, Spring Data JPA Test. All steps in building this application can be followed [here](https://spring.io/guides/tutorials/rest).
+
+
 
