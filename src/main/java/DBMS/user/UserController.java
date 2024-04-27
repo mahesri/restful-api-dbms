@@ -31,5 +31,32 @@ public class UserController {
         return "userForm";
     }
 
+    @PostMapping("/users/save")
+    public String saveUser(User user, RedirectAttributes ra) {
+        ra.addFlashAttribute("message", "User has been saved successfuly");
+        service.save(user);
+        return "redirect:/users";
+    }
+
+    @GetMapping("/users/edit/{id}")
+    public String showEditForm(@PathVariable("id") Integer id, Model model, RedirectAttributes ra){
+        try {
+            User user = service.get(id);
+            model.addAttribute("user", user);
+            model.addAttribute("pageTitle", "Edit User (ID "+ id +")");
+
+            return "userForm";
+        } catch (UserNotFondException e) {
+
+            ra.addFlashAttribute("message", e.getMessage());
+            return "redirect:/users";
+        }
+
+    }
+
+    @GetMapping("/users/delete/{id}")
+    public String deleteUser(){
+
+    }
 
 }
