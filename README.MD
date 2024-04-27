@@ -1,6 +1,6 @@
 ## A REST API of DBMS implement Bootstrap
 
-[Here]() to jump to the over-view.
+[Here](https://github.com/mahesri/restful-api-dbms?tab=readme-ov-file#over-view) for skip to the <b>over-view</b>.
 
 This application build using [Spring Boot](https://spring.io/projects/spring-boot).
 
@@ -56,7 +56,7 @@ mysql> desc user;
 ```
 
 
-After database has conecting successfully, run the main class.
+After database has conecting successfully, run the main class `src/main/java/DBMS/MydbmsApplication.java`
 
 Open new tab on Your browser type `http://localhost:8080`.
 
