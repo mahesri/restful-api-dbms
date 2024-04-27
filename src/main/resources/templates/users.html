@@ -1,18 +1,39 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" th:href="@{webjars/bootstrap/css/bootstrap.min.css}"/>
     <title>Manage Users</title>
+=======
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit User</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" type="text/css"/>
+>>>>>>> ab61f13cc677e45329765d506c89ba38d34e1239
 </head>
 <body>
 
 <div class="container-fluid text-center">
+<<<<<<< HEAD
     <div><h2>Manage Users</h2></div>
     
     <div class="m-2">
         <a class="h3" th:href="@{users/new}">Add New User</a>
+=======
+    <div><h2>Kelelola Pengguna</h2></div>
+    <div class="m-2">
+        <a class="h3" th:href="@{/user/new}">Tambah Pengguna</a>
+    </div>
+
+    <div th:if="${message}" class="alert alert-success text-center">
+        [[${message}]]
+
+>>>>>>> ab61f13cc677e45329765d506c89ba38d34e1239
     </div>
 
     <div>
@@ -20,14 +41,22 @@
             <thead class="thead-dark">
             <tr>
                 <th>ID</th>
+<<<<<<< HEAD
                 <th>E-mail</th>
                 <th>First Name</th>
                 <th>Last Name</th>
+=======
+                <th>EMAIL</th>
+                <th>NAMA DEPAN</th>
+                <th>NAMA BELAKANG</th>
+                <th>ENABLE</th>
+>>>>>>> ab61f13cc677e45329765d506c89ba38d34e1239
                 <th></th>
             </tr>
             </thead>
 
             <tbody>
+<<<<<<< HEAD
 
                 <th:block th:each="user : ${listUsers}">
                     <tr>
@@ -45,6 +74,22 @@
 
                 </th:block>
 
+=======
+            <th:block th:each="user : ${listUser}">
+                <tr>
+                    <td>[[${user.id}]]</td>
+                    <td>[[${user.email}]]</td>
+                    <td>[[${user.firstName}]]</td>
+                    <td>[[${user.lastName}]]</td>
+                    <td>[[${user.enable}]]</td>
+                    <td>
+                        <a class="h4 mr-3" th:href="@{'/user/edit/' + ${user.id}'}">Edit</a>
+                        <a class="h4" th:href="@{'/user/delete/' + ${user.id}'}">Delete</a>
+                    </td>
+
+                </tr>
+            </th:block>
+>>>>>>> ab61f13cc677e45329765d506c89ba38d34e1239
             </tbody>
 
         </table>

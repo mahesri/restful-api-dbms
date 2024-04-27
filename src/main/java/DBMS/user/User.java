@@ -22,6 +22,7 @@ public class User {
     @Column(length = 45, nullable = false, name = "last_name")
     private String lastName;
 
+<<<<<<< HEAD
     private boolean enabled;
 
     public boolean isEnabled() {
@@ -32,6 +33,9 @@ public class User {
         this.enabled = enabled;
     }
     
+=======
+    private boolean enable;
+>>>>>>> ab61f13cc677e45329765d506c89ba38d34e1239
     public Integer getId() {
         return id;
     }
@@ -86,4 +90,14 @@ public class User {
     }
 
 
+<<<<<<< HEAD
+=======
+    public boolean isEnable() {
+        return enable;
+    }
+
+    public void setEnable(boolean enable) {
+        this.enable = enable;
+    }
+>>>>>>> ab61f13cc677e45329765d506c89ba38d34e1239
 }
