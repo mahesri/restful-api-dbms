@@ -22,7 +22,7 @@ public class UserRepositoryTests {
         User user = new User();
             user.setEmail("alexstevenson@gmail.com");
             user.setPassword("thisalex");
-            user.setFirstName("Alex");
+            user.setFirstName("Alex J");
             user.setLastName("Stevenson");
 
             User savedUser = repo.save(user);
